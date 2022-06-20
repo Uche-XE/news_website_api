@@ -14,13 +14,14 @@ const [data, setData] = useState({
 })
 const [search, setSearch] = useState(`UK`)
 const [language, setLanguage] = useState(`en`)
+const [country, setCountry] = useState(`au`)
 
 const todaysDate = useRef(new Date().toJSON().slice(0, 10))
 const footerDate = useRef(new Date().getFullYear())
 const searchRef = useRef()
 const API_KEY = process.env.REACT_APP_API_KEY
-const URL = `https://newsapi.org/v2/everything?q=${search}&to=${todaysDate.current}&language=${language}&pageSize=50&sortBy=popularity&page=1&apiKey=${API_KEY}`;
-
+//const URL = `https://newsapi.org/v2/everything?q=${search}&to=${todaysDate.current}&language=${language}&pageSize=50&sortBy=popularity&page=1&apiKey=${API_KEY}`;
+const URL = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${API_KEY} `
 useEffect(() => {
   setData({
     results: null,

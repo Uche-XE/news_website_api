@@ -9,7 +9,7 @@ const Header = ({
   todaysDateDisplay}) => {
   return (
     <header>
-      <h1>News</h1>
+      <h1>News Today</h1>
       <h3>{todaysDateDisplay}</h3>
 <aside>
   <Forms 
