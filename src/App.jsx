@@ -12,7 +12,7 @@ const [data, setData] = useState({
   loading: true, 
   error: null
 })
-const [search, setSearch] = useState(`Berlin`)
+const search = useState(`Berlin`)
 const [language, setLanguage] = useState(`de`)
 const [country] = useState(`de`)
 
@@ -39,7 +39,7 @@ useEffect(() => {
 
 const handleSubmit = (e) => {
   e.preventDefault()
-  setSearch(searchRef.current.value)
+  search[1](searchRef.current.value)
   searchRef.current.value = ''
   searchRef.current.focus()
 }
