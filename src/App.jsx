@@ -12,9 +12,9 @@ const [data, setData] = useState({
   loading: true, 
   error: null
 })
-const [search, setSearch] = useState(`UK`)
-const [language, setLanguage] = useState(`en`)
-const [country, setCountry] = useState(`au`)
+const [search, setSearch] = useState(`Berlin`)
+const [language, setLanguage] = useState(`de`)
+const [country, setCountry] = useState(`de`)
 
 const todaysDate = useRef(new Date().toJSON().slice(0, 10))
 const footerDate = useRef(new Date().getFullYear())
