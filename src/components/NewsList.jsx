@@ -7,7 +7,7 @@ if (data.loading) return <p>Loading...</p>;
 if (data.error) return <p>{data.error}</p>;
 
 const newData = addIndex(data.results.articles);
-const itemsList = newData.map((item) => (
+const itemsList =newData && newData.map((item) => (
 <NewsItem 
 key={item.id}
 title={item.title}

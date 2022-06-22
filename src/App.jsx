@@ -31,7 +31,9 @@ useEffect(() => {
 
   fetch(URL)
   .then((response) => response.json())
-  .then((results) => setData({results, loading: false, error: null}))
+  .then((results) => {
+    console.log("results", results);
+    setData({results, loading: false, error: null})})
   .catch((error) => setData({results: null, loading: false, error}))
 },[URL])
 
