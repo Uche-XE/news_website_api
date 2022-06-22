@@ -13,15 +13,16 @@ const [data, setData] = useState({
   error: null
 })
 const search = useState(`Berlin`)
-const [language, setLanguage] = useState(`de`)
-const [country] = useState(`de`)
+const [language, setLanguage] = useState(`en`)
+
 
 
 const footerDate = useRef(new Date().getFullYear())
 const searchRef = useRef()
-const API_KEY = process.env.REACT_APP_API_KEY
+const API_KEY = process.env.REACT_APP_API_KEY1
 //const URL = `https://newsapi.org/v2/everything?q=${search}&to=${todaysDate.current}&language=${language}&pageSize=50&sortBy=popularity&page=1&apiKey=${API_KEY}`;
-const URL = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${API_KEY} `
+//const URL = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${API_KEY} `
+const URL =`https://gnews.io/api/v4/top-headlines?token=${API_KEY}&lang=${language}`
 useEffect(() => {
   setData({
     results: null,
