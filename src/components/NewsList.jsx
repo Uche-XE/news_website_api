@@ -3,17 +3,18 @@ import { addIndex } from '../helpers';
 import NewsItem from "./NewsItem";
 
 const NewsList = ({data}) => {
+  
 if (data.loading) return <p>Loading...</p>;
 if (data.error) return <p>{data.error}</p>;
-
-const newData = addIndex(data.results.articles);
+console.log(data.results);
+const newData = addIndex(data.results);
 const itemsList =newData && newData.map((item) => (
 <NewsItem 
 key={item.id}
 title={item.title}
 author={item.author}
-url={item.url}
-image={item.urlToImage}
+url={item.link}
+image={item.media}
 />
 ));
 

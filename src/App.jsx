@@ -19,10 +19,11 @@ const [language, setLanguage] = useState(`en`)
 
 const footerDate = useRef(new Date().getFullYear())
 const searchRef = useRef()
-const API_KEY = process.env.REACT_APP_API_KEY1
-//const URL = `https://newsapi.org/v2/everything?q=${search}&to=${todaysDate.current}&language=${language}&pageSize=50&sortBy=popularity&page=1&apiKey=${API_KEY}`;
+const API_KEY = process.env.NEWSCATCHER_API_KEY
+console.log(API_KEY);
 //const URL = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${API_KEY} `
-const URL =`https://gnews.io/api/v4/top-headlines?token=${API_KEY}&lang=${language}`
+//const URL =`https://newsdata.io/api/1/news?apikey=${API_KEY}&country=de,ca`
+const URL = `https://api.newscatcherapi.com/v2/search?q=Bitcoin&lang=en&sort_by=relevancy&page=1`
 useEffect(() => {
   setData({
     results: null,
@@ -30,12 +31,19 @@ useEffect(() => {
     error: null,
   })
 
-  fetch(URL)
-  .then((response) => response.json())
-  .then((results) => {
-    console.log("results", results);
-    setData({results, loading: false, error: null})})
-  .catch((error) => setData({results: null, loading: false, error}))
+  fetch(URL, {
+    headers: {
+      'x-api-key': `PJmhwADfexI-L0XlKrsQJoAcFzERx17KthsHx6gdpE8`
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+  })
+  .then((response) => {
+    return response.json()}
+    )
+  .then((data) => {
+    const { articles } = data;
+    setData({results: articles, loading: false, error: null})
+  }).catch((error) => setData({results: null, loading: false, error}))
 },[URL])
 
 const handleSubmit = (e) => {
