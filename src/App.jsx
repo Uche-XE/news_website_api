@@ -33,7 +33,7 @@ useEffect(() => {
 
   fetch(URL, {
     headers: {
-      'x-api-key': `PJmhwADfexI-L0XlKrsQJoAcFzERx17KthsHx6gdpE8`
+      'x-api-key': `LQtUwysNfl96jfGV11XDgucste1rW1GDfYqsZACAx2U`
       // 'Content-Type': 'application/x-www-form-urlencoded',
     },
   })
